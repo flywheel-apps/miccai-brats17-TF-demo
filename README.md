@@ -22,4 +22,4 @@
 * <code>test_all_class.txt</code> is a MICCAI BraTS 2017 configuration file containing the flywheel gear locations for input and output files. All other files are produced locally.
 
 ## GPU Execution
-For GPU execution, please see the development branch dedicated to exploring that functionality.
+For GPU execution, please see the development branch dedicated to exploring this functionality.
