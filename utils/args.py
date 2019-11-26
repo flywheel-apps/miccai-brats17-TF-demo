@@ -68,7 +68,7 @@ def execute(context):
     f.close()
 
     # change to the model execution directory
-    os.chdir("/opt/brats17/")
+    os.chdir("/usr/src/app/")
 
     command = ["python","test.py","/flywheel/v0/test_all_class.txt"]
     exec_command(context,command)    

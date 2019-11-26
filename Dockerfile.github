@@ -3,8 +3,9 @@
 # MICCAI 2017 BraTS challenge" from https://github.com/taigw/brats17
 
 # Use Latest Python 3.6 docker image
-# niftynet==0.5.0 depends on tensorflow==1.12.2 which is available in python3.6 (and python 3.5).
-FROM brats/brats_dc:latest
+# niftynet==0.5.0 depends on tensorflow==1.12.2 which is available in python3.6 
+# (and python 3.5).
+FROM python:3.6
 
 LABEL MAINTAINER="Flywheel <support@flywheel.io>"
 
@@ -16,9 +17,20 @@ RUN apt-get update \
     unzip \
     gzip 
 
+# Add the source code for the tumor segmentation models
+RUN git clone https://github.com/taigw/brats17.git /usr/src/app/
+
+# Replace an obsolete tensorflow library import with an updated one
+# tensorflow.contrib.data -> tensorflow.data
+RUN perl -p -i -e 's/tensorflow\.contrib\.data/tensorflow\.data/g' /usr/src/app/*.py
+
 # Make directory for flywheel spec (v0)
 ENV FLYWHEEL /flywheel/v0
 WORKDIR ${FLYWHEEL}
+
+# Install dependencies for tiagw/brats17
+COPY requirements.txt $FLYWHEEL/requirements.txt
+RUN pip install -r $FLYWHEEL/requirements.txt
 
 # Save docker environ
 RUN python -c 'import os, json; f = open("/tmp/gear_environ.json", "w"); json.dump(dict(os.environ), f)'
