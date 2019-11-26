@@ -1,9 +1,9 @@
-# flywheel/miccai-brats17-demo
-# Creates docker container that runs the "Brain tumor segmentation for 
-# MICCAI 2017 BraTS challenge" from https://github.com/taigw/brats17
+# flywheel/miccai-brats17-TF-demo
+# Pulls the docker container that runs the 
+# "Brain tumor segmentation for MICCAI 2017 BraTS challenge" 
+# from https://github.com/taigw/brats17
 
-# Use Latest Python 3.6 docker image
-# niftynet==0.5.0 depends on tensorflow==1.12.2 which is available in python3.6 (and python 3.5).
+# Use brats docker image
 FROM brats/brats_dc:latest
 
 LABEL MAINTAINER="Flywheel <support@flywheel.io>"
@@ -28,7 +28,6 @@ RUN python -c 'import os, json; f = open("/tmp/gear_environ.json", "w"); json.du
 COPY test_all_class.txt ${FLYWHEEL}/
 COPY manifest.json ${FLYWHEEL}/
 COPY run.py ${FLYWHEEL}/
-COPY utils ${FLYWHEEL}/utils
 
 # Configure entrypoint
 RUN chmod a+x ${FLYWHEEL}/run.py
