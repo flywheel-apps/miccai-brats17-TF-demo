@@ -16,6 +16,10 @@ RUN apt-get update \
     unzip \
     gzip 
 
+RUN pip install --upgrade pip && \
+    pip install flywheel-sdk
+
+
 # Make directory for flywheel spec (v0)
 ENV FLYWHEEL /flywheel/v0
 WORKDIR ${FLYWHEEL}

@@ -92,7 +92,7 @@ def main():
         # Setup the directory structure expected by brats17/test.py for a 
         # single subject (e.g. /flywheel/v0/work/{subject}/{fl})
         subject = context.config["Subject"]
-        os.makedirs(op.join(context.work_dir,subject), exist_ok=True)
+        os.makedirs(op.join(context.work_dir,subject))
 
         inputs = context._invocation['inputs']
         # Make symbolic links between the flywheel file structure and the file 
@@ -100,7 +100,7 @@ def main():
         for fl in inputs:
             if "location" in inputs[fl]:
                 src = inputs[fl]["location"]["path"]
-                dest = op.join(context.work_dir,subject,"/")
+                dest = op.join(context.work_dir,subject,inputs[fl]["location"]["name"])
                 os.symlink(src, dest) 
 
         # Create the test_names.txt file needed by taigw/brats2017 code...
