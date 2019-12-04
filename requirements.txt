@@ -1,5 +1,0 @@
-numpy==1.14.5 #max version allowed by niftynet 0.5.0
-tensorflow==1.12.2 #version required by niftynet... this is available via pip through python3.6.
-niftynet==0.5.0
-simpleitk
-flywheel-sdk #Not always used, but convenient for future reference.
