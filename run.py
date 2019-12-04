@@ -104,11 +104,7 @@ def main():
         for fl in inputs:
             if "location" in inputs[fl]:
                 src = inputs[fl]["location"]["path"]
-<<<<<<< HEAD
-                dest = op.join(context.work_dir,subject,"/")
-=======
                 dest = op.join(context.work_dir,subject,inputs[fl]["location"]["name"])
->>>>>>> josh-py-dev-w-gpu
                 os.symlink(src, dest) 
 
         # Create the test_names.txt file needed by taigw/brats2017 code...

@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Creates docker container that runs the "Brain tumor segmentation for MICCAI 2017 BraTS challenge" from https://github.com/taigw/brats17
 # Host System Requirements:
 #   	NVidia driver 384.81 or above to be installed (e.g. 410.48 works).
@@ -12,15 +11,6 @@
 #	niftynet==0.5.0
 
 FROM nvidia/cuda:9.0-devel-ubuntu16.04
-=======
-# flywheel/miccai-brats17-TF-demo
-# Pulls the docker container that runs the 
-# "Brain tumor segmentation for MICCAI 2017 BraTS challenge" 
-# from https://github.com/taigw/brats17
-
-# Use brats docker image
-FROM brats/brats_dc:latest
->>>>>>> josh-py-dev-w-gpu
 
 MAINTAINER Flywheel <support@flywheel.io>
 
