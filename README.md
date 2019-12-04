@@ -1,11 +1,11 @@
 # flywheel/miccai-brats17-demo
 
-[Flywheel Gear](https://github.com/flywheel-io/gears/tree/master/spec) that runs the [2nd place winner](https://github.com/taigw/brats17) of the [MICCAI 2017 BraTS (Brain Tumor Segmentation) Challenge](http://braintumorsegmentation.org/).
+[Flywheel Gear](https://github.com/flywheel-io/gears/tree/master/spec) that runs the [2nd place winner](https://github.com/taigw/brats17) of the [MICCAI 2017 BraTS (Brain Tumor Segmentation) Challenge](http://braintumorsegmentation.org/). We wrap their [TensorFlow](https://www.tensorflow.org/) and [NiftyNet](https://niftynet.io/) based [docker image](https://hub.docker.com/r/brats/brats_dc) in the Flywheel framework to enable ease of use.
 
 ## Important notes
 
 * This uses the data produced for the 2017 BraTS challenge. These data must be acquired from the Center for [Biomedical Image Computing and Analytics](https://ipp.cbica.upenn.edu/) at the University of Pennsylvania. Attribution for use is required.
-* Data may be prepared by brain-extracting the coregistered required modalities below in the required resolution (1mm isotropic 240x240x155 centered at [0,239,0]).
+* User data may be prepared by brain-extracting the required coregistered modalities.
 
 ## Required inputs
 1. The name of the Subject (e.g. Brats17_TCIA_607_1) placed in the "Subject" field of the configuration tab.
@@ -20,19 +20,6 @@
 
 ## Extra Files 
 * <code>test_all_class.txt</code> is a MICCAI BraTS 2017 configuration file containing the flywheel gear locations for input and output files. All other files are produced locally.
-* <code>requirements.txt</code> is a pip requirements file that is used to install code dependencies when the Dockerfile is built. 
-* <code>requirements-gpu.txt</code> and <code>Dockerfile.gpu</code> are GPU-enabled versions of the original files. See GPU Excecution Below
 
 ## GPU Execution
-Interactive docker (and podman) sessions of this gear have been tested in a GPU environment with significant speedup in inference time (30 seconds vs. 8 minutes) on an NVIDIA 1080 Ti.  The only difference (thus far) in gear instantiation is the docker/podman build command (e.g. 'podman build -t <Tag> -f Dockerfile.gpu .'). Other changes to the manifest may be necessary to provision the appropriate cloud resources. See Host and Container Requirements below:
-### Host Requirements
-1. NVIDIA Driver 384.81 minimum (410.48 worked. See [Driver Compatibility](https://docs.nvidia.com/deploy/cuda-compatibility/#binary-compatibility))
-
-### Guest Requirements
-1. Cuda: v9.0
-2. CuDNN: 7.1.4.18
-3. tensorflow-gpu: 1.12.2 (minimum 1.4.0. See requirements-gpu.txt)
-4. NiftyNet: 0.5.0 (minimum 0.2.0. See requirements-gpu.txt)
-5. Python 3.5 (Python 3.6 max version)
-
-The above versions of Cuda, CuDNN, tensorflow, and NiftyNet are required to execute the pretrained models created by [Guotai Wang](https://github.com/taigw/brats17). To use later versions of these libraries, retraining of the models would be required.
+For GPU execution, please see the development branch dedicated to exploring this functionality.

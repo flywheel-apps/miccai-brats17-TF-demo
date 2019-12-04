@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Creates docker container that runs the "Brain tumor segmentation for MICCAI 2017 BraTS challenge" from https://github.com/taigw/brats17
 # Host System Requirements:
 #   	NVidia driver 384.81 or above to be installed (e.g. 410.48 works).
@@ -11,6 +12,15 @@
 #	niftynet==0.5.0
 
 FROM nvidia/cuda:9.0-devel-ubuntu16.04
+=======
+# flywheel/miccai-brats17-TF-demo
+# Pulls the docker container that runs the 
+# "Brain tumor segmentation for MICCAI 2017 BraTS challenge" 
+# from https://github.com/taigw/brats17
+
+# Use brats docker image
+FROM brats/brats_dc:latest
+>>>>>>> josh-py-dev-w-gpu
 
 MAINTAINER Flywheel <support@flywheel.io>
 
@@ -39,6 +49,10 @@ RUN ln -s /usr/bin/python3 /usr/local/bin/python
 RUN git clone https://github.com/taigw/brats17.git /tmp/brats17/ && \
     perl -p -i -e 's/tensorflow\.contrib\.data/tensorflow\.data/g' /tmp/brats17/*.py    
 
+RUN pip install --upgrade pip && \
+    pip install flywheel-sdk
+
+
 # Make directory for flywheel spec (v0)
 ENV FLYWHEEL /flywheel/v0
 WORKDIR ${FLYWHEEL}
@@ -52,6 +66,7 @@ RUN pip3 install --upgrade pip && \
 
 # Copy custom tiagw/brats17 configuration file to the $FLYWHEEL directory
 # "test_names.txt" will be created on the fly from the subject name provided by the flywheel configuration
+<<<<<<< HEAD
 COPY test_all_class.txt $FLYWHEEL/
 
 COPY manifest.json $FLYWHEEL/
@@ -60,6 +75,11 @@ COPY utils $FLYWHEEL/utils
 
 # Save docker environ
 RUN python -c 'import os, json; f = open("/tmp/gear_environ.json", "w"); json.dump(dict(os.environ), f)'
+=======
+COPY test_all_class.txt ${FLYWHEEL}/
+COPY manifest.json ${FLYWHEEL}/
+COPY run.py ${FLYWHEEL}/
+>>>>>>> josh-py-dev-w-gpu
 
 # Configure entrypoint
 RUN chmod +x ./run.py
