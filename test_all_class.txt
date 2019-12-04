@@ -1,5 +1,5 @@
 [data]
-data_root         = /flywheel/v0/input/
+data_root         = /flywheel/v0/work/
 save_folder       = /flywheel/v0/output/
 data_names        = /flywheel/v0/test_names.txt
 modality_postfix  = [flair, t1, t1ce, t2]
