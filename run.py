@@ -1,4 +1,4 @@
-#!/usr/local/bin/python
+#!/usr/local/bin/python3
 import json
 import logging
 import os
@@ -92,11 +92,7 @@ def main():
         # Setup the directory structure expected by brats17/test.py for a 
         # single subject (e.g. /flywheel/v0/work/{subject}/{fl})
         subject = context.config["Subject"]
-<<<<<<< HEAD
         os.makedirs(op.join(context.work_dir,subject), exist_ok=True)
-=======
-        os.makedirs(op.join(context.work_dir,subject))
->>>>>>> josh-py-dev-w-gpu
 
         inputs = context._invocation['inputs']
         # Make symbolic links between the flywheel file structure and the file 

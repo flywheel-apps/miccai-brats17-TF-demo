@@ -35,7 +35,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 RUN ln -s /usr/bin/python3 /usr/local/bin/python
 
 # Add the source code for the tumor segmentation models
-# Replace an obsolete tensorflow library import with an updated one
+# Replace an obsolete tensorflow library import with an updated one for python3
 RUN git clone https://github.com/taigw/brats17.git /tmp/brats17/ && \
     perl -p -i -e 's/tensorflow\.contrib\.data/tensorflow\.data/g' /tmp/brats17/*.py    
 
@@ -56,20 +56,9 @@ RUN pip3 install --upgrade pip && \
 
 # Copy custom tiagw/brats17 configuration file to the $FLYWHEEL directory
 # "test_names.txt" will be created on the fly from the subject name provided by the flywheel configuration
-<<<<<<< HEAD
-COPY test_all_class.txt $FLYWHEEL/
-
-COPY manifest.json $FLYWHEEL/
-COPY run.py $FLYWHEEL/
-COPY utils $FLYWHEEL/utils
-
-# Save docker environ
-RUN python -c 'import os, json; f = open("/tmp/gear_environ.json", "w"); json.dump(dict(os.environ), f)'
-=======
 COPY test_all_class.txt ${FLYWHEEL}/
 COPY manifest.json ${FLYWHEEL}/
 COPY run.py ${FLYWHEEL}/
->>>>>>> josh-py-dev-w-gpu
 
 # Configure entrypoint
 RUN chmod +x ./run.py
