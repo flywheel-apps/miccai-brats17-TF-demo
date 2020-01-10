@@ -110,7 +110,7 @@ def main():
         f.close()
 
         # change to the model execution directory
-        os.chdir("/usr/src/app/")
+        os.chdir("/tmp/brats17/")
         command = ["python","test.py","/flywheel/v0/test_all_class.txt"]
         exec_command(context,command)
 
