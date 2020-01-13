@@ -10,10 +10,10 @@
 	"source": "https://github.com/taigw/brats17",
 	"version": "0.1.0",
 	"custom": {
-        "docker-image": "flywheel/miccai-brats17-demo:0.1.0",
+        "docker-image": "flywheel/miccai-brats17:0.1.0",
 		"gear-builder": {
 			"category": "analysis",
-			"image": "flywheel/miccai-brats17-demo:0.1.0"
+			"image": "flywheel/miccai-brats17:0.1.0"
 		}
 	},
 	"inputs": {
