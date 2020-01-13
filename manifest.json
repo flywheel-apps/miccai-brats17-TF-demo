@@ -8,12 +8,12 @@
 	"cite": "Guotai Wang, Wenqi Li, Sebastien Ourselin, Tom Vercauteren. \"Automatic Brain Tumor Segmentation using Cascaded Anisotropic Convolutional Neural Networks.\" In Brainlesion: Glioma, Multiple Sclerosis, Stroke and Traumatic Brain Injuries. Pages 179-190. Springer, 2018. https://arxiv.org/abs/1709.00382",
 	"url": "https://github.com/taigw/brats17",
 	"source": "https://github.com/taigw/brats17",
-	"version": "0.0.2",
+	"version": "0.1.0",
 	"custom": {
-        "docker-image": "flywheel/miccai-brats17-demo:0.0.2",
+        "docker-image": "flywheel/miccai-brats17-demo:0.1.0",
 		"gear-builder": {
 			"category": "analysis",
-			"image": "flywheel/miccai-brats17-demo:0.0.2"
+			"image": "flywheel/miccai-brats17-demo:0.1.0"
 		}
 	},
 	"inputs": {
