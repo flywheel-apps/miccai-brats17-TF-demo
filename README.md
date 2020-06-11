@@ -5,7 +5,7 @@
 ## Important notes
 
 * This uses the data produced for the 2017 BraTS challenge. These data must be acquired from the Center for [Biomedical Image Computing and Analytics](https://ipp.cbica.upenn.edu/) at the University of Pennsylvania. Attribution for use is required.
-* User data may be prepared by brain-extracting the required coregistered modalities.
+* User data is prepared by brain-extracting the required coregistered modalities. See the [BraTS Data Description Overview](https://www.med.upenn.edu/cbica/brats2019/data.html) for more information.
 
 ## Required inputs
 1. The name of the Subject (e.g. Brats17_TCIA_607_1) placed in the "Subject" field of the configuration tab.
