@@ -1,7 +1,7 @@
 {
 	"name": "miccai-brats17-demo",
 	"label": "MICCAI Tumor Segmentation 2017 Taigw",
-	"description": "This gear wraps the source code and pre-trained models for brain tumor segmentation with BraTS dataset. The method is detailed in [1], and it won 2nd place in the MICCAI 2017 BraTS Challenge. For information on data preparation for use with this gear see the BraTS Data Description Overview (https://www.med.upenn.edu/cbica/brats2019/data.html).",
+	"description": "This gear wraps the source code and pre-trained models for brain tumor segmentation with BraTS dataset. The method is detailed in [1], and it won 2nd place in the MICCAI 2017 BraTS Challenge. For information on data preparation for use with this gear see the BraTS Data Description Overview (https://www.med.upenn.edu/cbica/brats2019/data.html). ",
 	"author": "Guotai Wang",
 	"maintainer": "Flywheel <support@flywheel.io>",
 	"license": "Other",
