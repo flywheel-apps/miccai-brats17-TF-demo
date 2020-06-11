@@ -1,19 +1,19 @@
 {
 	"name": "miccai-brats17-demo",
 	"label": "MICCAI Tumor Segmentation 2017 Taigw",
-	"description": "This gear wraps the source code and pre-trained models for brain tumor segmentation with BraTS dataset. The method is detailed in [1], and it won the 2nd place of MICCAI 2017 BraTS Challenge. In addition, it is adapted to deal with BraTS 2015 dataset.",
+	"description": "This gear wraps the source code and pre-trained models for brain tumor segmentation with BraTS dataset. The method is detailed in [1], and it won 2nd place in the MICCAI 2017 BraTS Challenge. For information on data preparation for use with this gear see the BraTS Data Description Overview (https://www.med.upenn.edu/cbica/brats2019/data.html).",
 	"author": "Guotai Wang",
 	"maintainer": "Flywheel <support@flywheel.io>",
 	"license": "Other",
 	"cite": "Guotai Wang, Wenqi Li, Sebastien Ourselin, Tom Vercauteren. \"Automatic Brain Tumor Segmentation using Cascaded Anisotropic Convolutional Neural Networks.\" In Brainlesion: Glioma, Multiple Sclerosis, Stroke and Traumatic Brain Injuries. Pages 179-190. Springer, 2018. https://arxiv.org/abs/1709.00382",
 	"url": "https://github.com/taigw/brats17",
-	"source": "https://github.com/taigw/brats17",
-	"version": "0.0.2",
+	"source": "https://github.com/flywheel-apps/miccai-brats17-TF-demo",
+	"version": "0.1.0",
 	"custom": {
-        "docker-image": "flywheel/miccai-brats17-demo:0.0.2",
+        "docker-image": "flywheel/miccai-brats17-demo:0.1.0",
 		"gear-builder": {
 			"category": "analysis",
-			"image": "flywheel/miccai-brats17-demo:0.0.2"
+			"image": "flywheel/miccai-brats17-demo:0.1.0"
 		}
 	},
 	"inputs": {
